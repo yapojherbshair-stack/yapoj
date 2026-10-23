@@ -100,6 +100,7 @@ function initDoctorLeadForm() {
   const modal = document.getElementById('doctorModal');
   const closeBtn = document.getElementById('closeModalBtn');
   const modalUserPhone = document.getElementById('modalUserPhone');
+  const modalUserMeta = document.getElementById('modalUserMeta');
   const modalUserConcern = document.getElementById('modalUserConcern');
   const whatsappBtn = document.getElementById('modalWhatsAppBtn');
 
@@ -123,24 +124,26 @@ function initDoctorLeadForm() {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('userName')?.value.trim() || 'Valued Customer';
+    const name = document.getElementById('userName')?.value.trim() || 'కస్టమర్';
+    const age = document.getElementById('userAge')?.value.trim() || 'పేర్కొనలేదు';
     const phone = document.getElementById('userPhone')?.value.trim();
     const concernSelect = document.getElementById('hairConcern');
-    const concern = concernSelect?.options[concernSelect.selectedIndex]?.text || 'Hair Thinning & Regrowth';
+    const concern = concernSelect?.options[concernSelect.selectedIndex]?.text || 'తీవ్రమైన జుట్టు రాలడం';
 
     if (!phone || phone.length < 8) {
-      alert('Please enter a valid phone number so our team can reach you.');
+      alert('దయచేసి సరైన మొబైల్ నంబర్‌ను నమోదు చేయండి.');
       phoneInput?.focus();
       return;
     }
 
-    // Build WhatsApp message with customer details
+    // Build WhatsApp message with customer details in Telugu
     const waMsg = encodeURIComponent(
-      `Hello! I am interested in YAPOJ Ayurvedic Hair Oil.\n\n` +
-      `*Name:* ${name}\n` +
-      `*Phone:* ${phone}\n` +
-      `*Hair Concern:* ${concern}\n\n` +
-      `Please guide me on the right product and dosage.`
+      `నమస్కారం! నేను YAPOJ ఆయుర్వేదిక్ హెయిర్ ఆయిల్ గురించి సంప్రదించాలనుకుంటున్నాను.\n\n` +
+      `*పేరు:* ${name}\n` +
+      `*వయస్సు:* ${age} సంవత్సరాలు\n` +
+      `*మొబైల్ నంబర్:* ${phone}\n` +
+      `*జుట్టు సమస్య:* ${concern}\n\n` +
+      `దయచేసి నా సమస్యకు సరైన పరిష్కారం మరియు ఆయిల్ వాడే విధానం తెలియజేయగలరు.`
     );
     const waUrl = `https://wa.me/919494056908?text=${waMsg}`;
 
@@ -154,6 +157,7 @@ function initDoctorLeadForm() {
 
     // Update modal info & show it
     if (modalUserPhone) modalUserPhone.textContent = phone;
+    if (modalUserMeta) modalUserMeta.textContent = `${name} (${age} సం.)`;
     if (modalUserConcern) modalUserConcern.textContent = concern;
     openModal(modal);
 
@@ -161,7 +165,7 @@ function initDoctorLeadForm() {
     const submitBtn = form.querySelector('.btn-submit-callback');
     if (submitBtn) {
       const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = `<span>✓ Connecting on WhatsApp...</span>`;
+      submitBtn.innerHTML = `<span>✓ వాట్సాప్‌కి కనెక్ట్ అవుతోంది...</span>`;
       setTimeout(() => {
         submitBtn.innerHTML = originalText;
       }, 4000);
@@ -348,7 +352,7 @@ function initCountdownTimer() {
 
   setInterval(() => {
     if (totalSeconds <= 0) {
-      timerElem.textContent = 'Doctor is connecting now...';
+      timerElem.textContent = 'డాక్టర్ ఇప్పుడు మీకు కాల్ చేస్తున్నారు...';
       return;
     }
 

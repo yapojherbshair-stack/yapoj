@@ -136,62 +136,70 @@
             </div>
           </div>
 
-          <!-- Doctor Callback Lead Form Box (User explicitly requested phone number & doctor contact) -->
+          <!-- Doctor Callback Lead Form Box (In Telugu with Age field) -->
           <div class="hero-doctor-form-card">
             <div class="form-header-badge">
               <div class="doctor-badge-tag">
                 <span class="dot"></span>
-                <span>Dr. Priya Sharma & YAPOJ Medical Team Online</span>
+                <span>డాక్టర్ ప్రియా శర్మ & YAPOJ మెడికల్ టీమ్ ఆన్‌లైన్</span>
               </div>
-              <span class="consultation-fee-pill">100% FREE CONSULT</span>
+              <span class="consultation-fee-pill">100% ఉచిత సంప్రదింపులు</span>
             </div>
 
-            <h2 class="form-title">Talk to YAPOJ Certified Doctor</h2>
+            <h2 class="form-title">YAPOJ సర్టిఫైడ్ డాక్టర్‌తో మాట్లాడండి</h2>
             <p class="form-description">
-              Provide your phone number below. Our trichologist will call you within 15 minutes to evaluate your scalp condition and customize your YAPOJ hair regrowth plan.
+              క్రింద మీ వివరాలు నమోదు చేయండి. మా నిపుణులైన డాక్టర్ 15 నిమిషాల్లో మీకు కాల్ చేసి, మీ స్కాల్ప్ సమస్యను పరిశీలించి సరైన పరిష్కారం సూచిస్తారు.
             </p>
 
             <form class="doctor-lead-form" id="doctorCallbackForm">
               <div class="form-row-dual">
                 <div class="input-field-group">
-                  <label for="userName" class="input-label">Your Name</label>
+                  <label for="userName" class="input-label">మీ పేరు (Name)</label>
                   <div class="input-control-wrap">
                     <span class="input-prefix-icon">👤</span>
-                    <input type="text" id="userName" class="text-input" placeholder="e.g. Rahul Sharma" required>
+                    <input type="text" id="userName" class="text-input" placeholder="ఉదా: రమేష్ కుమార్" required>
                   </div>
                 </div>
 
                 <div class="input-field-group">
-                  <label for="userPhone" class="input-label">Mobile Number (For Doctor Call)</label>
+                  <label for="userAge" class="input-label">మీ వయస్సు (Age)</label>
                   <div class="input-control-wrap">
-                    <span class="input-prefix-icon">📞</span>
-                    <input type="tel" id="userPhone" class="text-input" placeholder="+91 98765 43210" required>
+                    <span class="input-prefix-icon">🎂</span>
+                    <input type="number" id="userAge" class="text-input" placeholder="ఉదా: 28" min="10" max="100" required>
                   </div>
                 </div>
               </div>
 
               <div class="input-field-group">
-                <label for="hairConcern" class="input-label">Primary Scalp / Hair Concern</label>
+                <label for="userPhone" class="input-label">మొబైల్ నంబర్ (Mobile Number)</label>
+                <div class="input-control-wrap">
+                  <span class="input-prefix-icon">📞</span>
+                  <input type="tel" id="userPhone" class="text-input" placeholder="+91 94940 56908" required>
+                </div>
+              </div>
+
+              <div class="input-field-group">
+                <label for="hairConcern" class="input-label">మీ జుట్టు సమస్య (Hair Concern)</label>
                 <div class="input-control-wrap">
                   <span class="input-prefix-icon">🔍</span>
                   <select id="hairConcern" class="select-input" required>
-                    <option value="hair_fall">Severe Hair Fall (Stop in 7 Days)</option>
-                    <option value="dandruff">Flaky Dandruff & Scalp Itch (Clear in 1 Week)</option>
-                    <option value="regrowth_10_20">Bald Patches & Thinning (Regrowth in 10-20 Days)</option>
-                    <option value="white_to_black">Premature White / Grey Hair (Turn Black in 1 Month)</option>
-                    <option value="crown_thinning">Crown & Vertex Thinning</option>
-                    <option value="receding_hairline">Receding Hairline & Temple Loss</option>
+                    <option value="hair_fall">తీవ్రమైన జుట్టు రాలడం (7 రోజుల్లో నివారణ)</option>
+                    <option value="dandruff">చుండ్రు & తల దురద (1 వారంలో క్లియర్)</option>
+                    <option value="regrowth_10_20">బట్టతల / జుట్టు పలచబడటం (10-20 రోజుల్లో రీగ్రోత్)</option>
+                    <option value="white_to_black">తెల్ల జుట్టు (1 నెలలో సహజంగా నల్లగా మారడం)</option>
+                    <option value="crown_thinning">తల పైభాగంలో విపరీతంగా జుట్టు తగ్గడం</option>
+                    <option value="receding_hairline">ముందు జుట్టు రాలి వెనక్కి వెళ్లడం (హెయిర్‌లైన్ సమస్య)</option>
                   </select>
                 </div>
               </div>
 
               <button type="submit" class="btn-submit-callback" id="submitLeadBtn">
-                <span>Request Free Doctor Callback</span>
+                <span>ఉచిత డాక్టర్ కాల్ రిక్వెస్ట్ చేయండి</span>
                 <span>➔</span>
               </button>
 
               <div class="form-privacy-note">
-                <span>🔒 Confidential & Private • Dr. Priya Sharma calls within 15 mins</span>
+                <span>🔒 100% గోప్యమైనది • డాక్టర్ ప్రియా శర్మ 15 నిమిషాల్లో కాల్ చేస్తారు</span>
               </div>
             </form>
           </div>
@@ -532,33 +540,34 @@
       
       <div class="modal-icon-badge">🩺</div>
       
-      <h3 class="modal-title">Consultation Requested!</h3>
+      <h3 class="modal-title">కాల్ రిక్వెస్ట్ విజయవంతంగా నమోదైంది!</h3>
       <p class="modal-desc">
-        Thank you. Dr. Priya Sharma’s YAPOJ clinical trichology team has received your request.
+        ధన్యవాదాలు. డాక్టర్ ప్రియా శర్మ గారి YAPOJ ఆయుర్వేద మెడికల్ టీమ్ మీ వివరాలను స్వీకరించింది.
       </p>
 
       <div class="modal-callback-info-box">
         <div class="callback-doctor-row">
           <img src="assets/images/doctor_trichologist.jpg" alt="Dr. Priya Sharma" class="callback-doc-thumb">
           <div class="callback-doc-meta">
-            <h5>Dr. Priya Sharma (YAPOJ Senior Trichologist)</h5>
-            <p>Calling number: <strong id="modalUserPhone" style="color: var(--gold-light);">+91 ...</strong></p>
-            <p>Topic: <span id="modalUserConcern" style="color: var(--emerald-accent);">Hair Regrowth</span></p>
+            <h5>డాక్టర్ ప్రియా శర్మ (YAPOJ సీనియర్ వైద్యురాలు)</h5>
+            <p>కాల్ చేయవలసిన నంబర్: <strong id="modalUserPhone" style="color: var(--gold-light);">+91 ...</strong></p>
+            <p>పేరు & వయస్సు: <strong id="modalUserMeta" style="color: var(--text-primary);">-</strong></p>
+            <p>సమస్య: <span id="modalUserConcern" style="color: var(--emerald-accent);">జుట్టు రీగ్రోత్</span></p>
           </div>
         </div>
 
         <div class="countdown-timer-wrap">
-          <span class="countdown-label">Estimated Doctor Call Time:</span>
+          <span class="countdown-label">డాక్టర్ కాల్ చేయడానికి అంచనా సమయం:</span>
           <span class="countdown-digits" id="callCountdown">14:58</span>
         </div>
       </div>
 
       <a href="https://wa.me/919494056908" target="_blank" rel="noopener noreferrer" class="whatsapp-fast-btn" id="modalWhatsAppBtn">
-        <span>💬 Instant Connect via WhatsApp</span>
+        <span>💬 వాట్సాప్‌లో నేరుగా మాట్లాడండి</span>
       </a>
 
       <p style="font-size: 0.74rem; color: var(--text-muted);">
-        Please keep your phone nearby. Dr. Priya Sharma will call to evaluate your hair condition and review your 7-day hairfall stop plan.
+        దయచేసి మీ ఫోన్‌ను అందుబాటులో ఉంచుకోండి. మీ జుట్టు సమస్యను పరిశీలించడానికి డాక్టర్ ప్రియా శర్మ త్వరలోనే కాల్ చేస్తారు.
       </p>
     </div>
   </div>
@@ -569,10 +578,10 @@
   <div class="floating-mobile-bar">
     <div class="mobile-bar-inner">
       <a href="#doctorCallbackForm" class="btn-mobile-call trigger-consultation">
-        <span>📞 Doctor Call (Free)</span>
+        <span>📞 ఉచిత డాక్టర్ కాల్</span>
       </a>
-      <a href="https://wa.me/919494056908?text=Hi%20I%20want%20to%20consult%20about%20hair%20regrowth%20with%20YAPOJ%20Ayurvedic%20Hair%20Oil" class="btn-mobile-buy" target="_blank" rel="noopener">
-        <span>💬 WhatsApp Us</span>
+      <a href="https://wa.me/919494056908?text=%E0%B0%A8%E0%B0%AE%E0%B0%B8%E0%B1%8D%E0%B0%95%E0%B0%BE%E0%B0%B0%E0%B0%82!%20%E0%B0%A8%E0%B1%87%E0%B0%A8%E0%B1%81%20YAPOJ%20%E0%B0%86%E0%B0%AF%E0%B1%81%E0%B0%B0%E0%B1%8D%E0%B0%B5%E0%B1%87%E0%B0%A6%E0%B0%BF%E0%B0%95%E0%B1%8D%20%E0%B0%B9%E0%B1%86%E0%B0%AF%E0%B0%BF%E0%B0%B0%E0%B1%8D%20%E0%B0%86%E0%B0%AF%E0%B0%BF%E0%B0%B2%E0%B1%8D%20%E0%B0%97%E0%B1%81%E0%B0%B0%E0%B0%BF%E0%B0%82%E0%B0%9A%E0%B0%BF%20%E0%B0%A1%E0%B0%BE%E0%B0%95%E0%B1%8D%E0%B0%9F%E0%B0%B0%E0%B1%8D%E2%80%8C%E0%B0%A4%E0%B1%8B%20%E0%B0%AE%E0%B0%BE%E0%B0%9F%E0%B1%8D%E0%B0%B2%E0%B0%BE%E0%B0%A1%E0%B0%BE%E0%B0%B2%E0%B0%A8%E0%B1%81%E0%B0%95%E0%B1%81%E0%B0%82%E0%B0%9F%E0%B1%81%E0%B0%A8%E0%B1%8D%E0%B0%A8%E0%B0%BE%E0%B0%A8%E0%B1%81." class="btn-mobile-buy" target="_blank" rel="noopener">
+        <span>💬 వాట్సాప్ చేయండి</span>
       </a>
     </div>
   </div>
